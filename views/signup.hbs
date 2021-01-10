@@ -1,0 +1,30 @@
+<h1>{{ title }}</h1>
+<p>ユーザー登録をするページです</p>
+{{#if user}}
+<p>すでにログイン済みです</p>
+<ul>
+  <li>ユーザーID:{{user.id}}</li>
+  <li>ユーザー名:{{user.username}}</li>
+</ul>
+<a href="/users/logout">ログアウトする</a>
+{{else}}
+<form action="/users/signup" method="post">
+    <div>
+        <label>ユーザーID：</label>
+        <input type="text" name="username" required="required"/>
+    </div>
+    <div>
+        <label>パスワード：</label>
+        <input type="password" name="password" required="required"/>
+    </div>
+    <div>
+        <label>アドレス　：</label>
+        <input type="text" name="address" required="required"/>
+    </div>
+    <div>
+        <input type="submit" value="登録"/>
+    </div>
+</form>
+{{/if}}
+<br>
+<a href="/">トップページに戻る</a>
