@@ -5,6 +5,8 @@ https://github.com/hugodeblog/node-restify-sequelize
 
 以下のようなWebApp+認証サーバーの組み合わせのフローを実現するサンプルである。
 
+![処理フロー](https://github.com/hugodeblog/node-passport-restify/blob/images/088D6202C6A5B79860F0F43E2BAE571C.jpg)
+
 主に以下のモジュールを用いて、ユーザー情報をSQLite3のDBに保存して、Restifyによるユーザー認証APIサーバーを構築するサンプル。
 
 それぞれで主に使っているパッケージ、モジュールは
@@ -65,3 +67,7 @@ Connected to redis successfully
 ```
 
 これで3000番ポートでWebAppが待ち受け状態となる。
+
+実際の動作状況は以下のようになる。
+
+![動作チェック](https://github.com/hugodeblog/node-passport-restify/blob/images/passport-restify.gif)
