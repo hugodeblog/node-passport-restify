@@ -1,0 +1,28 @@
+@startuml hogehoge
+participant User
+
+User -> WebApp: リクエスト
+activate WebApp
+
+WebApp -> WebApp: sessionなし
+
+WebApp -> User: ログインフォーム
+deactivate WebApp
+
+User -> WebApp: ID/Pass
+activate WebApp
+
+WebApp -> UserAuthServer: ID/Pass
+activate UserAuthServer
+
+UserAuthServer -> UserAuthServer: 認証
+
+
+UserAuthServer -> WebApp: 認証OK
+deactivate UserAuthServer
+
+WebApp -> WebApp: 新規session確立
+
+WebApp -> User: コンテンツ\nSet-Cookie:session
+deactivate WebApp
+@enduml
